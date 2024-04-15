@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-app-pod
+spec:
+  containers:
+  - name: web-container
+    image: nginx:latest
+    volumeMounts:
+    - name: data-volume
+      mountPath: /data
+  volumes:
+  - name: data-volume
+    emptyDir: {}
